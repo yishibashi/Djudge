@@ -93,3 +93,7 @@ Contact GitHub API Training Shop Blog About
 # JetBrain
 .idea/
 
+.cache
+.idea
+*.egg-info
+__pycache__/
