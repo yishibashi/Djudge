@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='djudge',
@@ -9,6 +9,11 @@ setup(
             'djudge = djudge.http_server:djudge',
         ]
     },
+    install_requires=[
+        'hug',
+        'SQLAlchemy',
+        'PyMySQL'
+    ],
 
     author='yishibashi',
     author_email='yishibashi101@gmail.com',
