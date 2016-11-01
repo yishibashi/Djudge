@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <title> Contribute - DJudge </title>
+</head>
+
+<body>
+<div class="col-sm-8">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>Contest</label>
+          <input type="text" name="password" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="ProblemSelect">Problem</label>
+            <select class="form-control" id="ProblemSelect" name="problem">
+                <option value="1">DJudge 001</option>
+                <option value="2">Djudge 002</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="CodeTextarea">Body</label>
+            <textarea class="form-control" id="CodeTextarea" rows="10" name="code"></textarea>
+        </div>
+
+        <!--
+        <div class="form-group">
+            <label for="InputFile">File input</label>
+            <input type="file" class="form-control-file" id="InputFile" aria-describedby="fileHelp">
+            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the
+                above input. It's a bit lighter and easily wraps to a new line.
+            </small>
+        </div>
+        -->
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+</body>
+
+</html>
