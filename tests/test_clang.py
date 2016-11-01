@@ -5,7 +5,14 @@ from djudge.exceptions import CompileError
 
 
 def test_compile():
-    Clang.compile('int main() {return 0;}')
+    Clang.compile('''
+#include <iostream>
+int main()
+{
+  std::cout << "Hello World!" << std::endl;
+  return 0;
+}
+    ''')
 
 
 def test_compile_with_wrong_code():
