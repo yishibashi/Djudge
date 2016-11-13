@@ -11,20 +11,27 @@ Base = declarative_base() #cls=ReprBase)
 
 class Problem(Base):
     __tablename__ = 'problem'
+    """
+    problems and its answer
+    """
 
     id = Column(Integer, primary_key=True)
     contest_name = Column(String(32), nullable=False)
     problem_type = Column(String(32), nullable=False)
     problem_body = Column(Text, nullable=False) # Text? String?
+    answer = Column(Text, nullable=False)
 
-    def __init__(self, contest_name, problem_type, problem_body):
+    def __init__(self, contest_name, problem_type, problem_body, answer):
         self.contest_name = contest_name
         self.problem_type = problem_type
         self.problem_body = problem_body
+        self.answer = answer
 
 class Submit(Base):
     __tablename__ = 'submit'
-
+    """
+    problem, compiler, code.
+    """
     id = Column(Integer, primary_key=True)
     problem = Column(String(32), nullable=False)
     compiler = Column(String(32), nullable=False)

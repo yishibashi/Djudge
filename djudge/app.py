@@ -14,35 +14,41 @@ def submit_get():
 
 @hug.post('/submit', output=hug.output_format.json)
 def submit_post(problem: int, compiler: int, code: hug.types.text):
-    print(problem, compiler, code)
-    p= Problem(problem, compiler, code)
+    """
+    回答
+    """
+    s = Submit(problem, compiler, code)
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.add(p)
+    session.add(s)
     session.commit()
     return{
-    'problem': problem,
-    'compiler': compiler,
-    'code': code
+        'problem': problem,
+        'compiler': compiler,
+        'code': code
     }
+
 
 @hug.get('/contribute', output=hug.output_format.html)
 def contribute():
     return pkgutil.get_data(__package__, 'templates/contribute.html').decode()
 
-
 @hug.post('/contribute', output=hug.output_format.json)
-def contribute(problem, compiler, code):
-    print(problem, compiler, code)
-    p= Problem(problem, compiler, code)
+def contribute(contest_name: hug.types.text, problem_type: int,
+        problem_body: hug.types.text, answer: hug.types.text):
+    """
+    問題を投稿
+    """
+    p = Problem(contest_name, problem_type, problem_body, answer)
     Session = sessionmaker(bind=engine)
     session = Session()
     session.add(p)
     session.commit()
     return{
-    'problem': problem,
-    'compiler': compiler,
-    'code': code
+        'contest': contest_name,
+        'type': problem_type,
+        'body': problem_body,
+        'answer': answer
     }
 
 

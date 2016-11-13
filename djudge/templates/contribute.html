@@ -22,21 +22,23 @@
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label>Contest</label>
-          <input type="text" name="password" class="form-control">
+          <input type="text" name="contest_name" class="form-control">
         </div>
 
         <div class="form-group">
             <label for="ProblemSelect">Problem</label>
-            <select class="form-control" id="ProblemSelect" name="problem">
-                <option value="1">DJudge 001</option>
-                <option value="2">Djudge 002</option>
+            <select class="form-control" id="ProblemSelect" name="problem_type">
+                <option value="1">001</option>
+                <option value="2">002</option>
+                <option value="3">003</option>
+                <option value="4">004</option>
             </select>
         </div>
 
 
         <div class="form-group">
             <label for="CodeTextarea">Body</label>
-            <textarea class="form-control" id="CodeTextarea" rows="10" name="code"></textarea>
+            <textarea class="form-control" id="CodeTextarea" rows="10" name="problem_body"></textarea>
         </div>
 
         <!--
@@ -48,6 +50,11 @@
             </small>
         </div>
         -->
+        <div class="form-group">
+            <label for="CodeTextarea">Answer</label>
+            <textarea class="form-control" id="CodeTextarea" rows="10" name="answer"></textarea>
+        </div>
+
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
